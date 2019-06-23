@@ -4,28 +4,23 @@ import json
 with open("gewichten.json") as test:
     lijst = json.load(test)
 
-layer1 = lijst['layer1']['weights']
-layer2 = lijst['layer2']['weights']
+layer1 = lijst['layer1']
+layer2 = lijst['layer2']
 
 inputVector = [1,1,1,1,1]
 
-x = []
-for i in layer1:
-    for j in layer1[i]:
-        x.append(float(layer1[i][j]))
-x = np.array(x)
-x = np.reshape(x,(5,4))
-x = x.transpose()
-# print(x)
+def createMatrix(layer):
+    x = int(layer["size_in"])
+    y = int(layer["size_out"])
+    a = np.zeros((y, x))
+    for i in layer["weights"]:
+        for key, value in layer["weights"][i].items():
+            a[int(key) - 1, int(i) - 1] = float(value)
+    return a
 
-y = []
-for i in layer2:
-    for j in layer2[i]:
-        y.append(float(layer2[i][j]))
-y = np.array(y)
-y = np.reshape(y,(4,2))
-y = y.transpose()
-# print(y)
+x = createMatrix(layer1)
+y = createMatrix(layer2)
+
 
 def multiply(M, V):
     m = len(M)
@@ -56,3 +51,5 @@ output = multiply(y,hiddenLayer)
 
 print("Uitkomst voor de hiddenlayer: {} ".format(multiply(x,inputVector)))
 print("Output: {}".format(multiply(y,hiddenLayer)))
+
+
