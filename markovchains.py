@@ -1,0 +1,57 @@
+import numpy as np
+
+
+# x0 = [0.1,0.7,0.2]
+# transitionMatrix = [[0.8,0.1,0.1],[0.4,0.5,0.1],[0.6,0.2,0.2]]
+# transitionMatrix = np.reshape(transitionMatrix,(3,3))
+
+x0 = [0.1,0.3,0.2,0.4]
+transitionMatrix = [[0.7,0.1,0.1,0.1],[0.3,0.4,0.1,0.2],[0.5,0.1,0.1,0.3],[0.3,0.2,0.2,0.3]]
+transitionMatrix = np.reshape(transitionMatrix,(4,4))
+
+x1 = np.dot(x0,transitionMatrix)
+x2 = np.dot(x1,transitionMatrix)
+x3 = np.dot(x2,transitionMatrix)
+x4 = np.dot(x3,transitionMatrix)
+x5 = np.dot(x4,transitionMatrix)
+x6 = np.dot(x5,transitionMatrix)
+x7 = np.dot(x6,transitionMatrix)
+x8 = np.dot(x7,transitionMatrix)
+x9 = np.dot(x8,transitionMatrix)
+x10 = np.dot(x9,transitionMatrix)
+x11 = np.dot(x10,transitionMatrix)
+x12 = np.dot(x11,transitionMatrix)
+x13 = np.dot(x12,transitionMatrix)
+x14 = np.dot(x13,transitionMatrix)
+x15 = np.dot(x14,transitionMatrix)
+x16 = np.dot(x15,transitionMatrix)
+x17 = np.dot(x16,transitionMatrix)
+x18 = np.dot(x17,transitionMatrix)
+x19 = np.dot(x18,transitionMatrix)
+x20 = np.dot(x19,transitionMatrix)
+x21 = np.dot(x20,transitionMatrix)
+x22 = np.dot(x21,transitionMatrix)
+
+p2 = np.dot(transitionMatrix,transitionMatrix)
+p3 = np.dot(p2,transitionMatrix)
+p4 = np.dot(p3,transitionMatrix)
+p5 = np.dot(p4,transitionMatrix)
+p6 = np.dot(p5,transitionMatrix)
+p7 = np.dot(p6,transitionMatrix)
+p8 = np.dot(p7,transitionMatrix)
+p9 = np.dot(p8,transitionMatrix)
+p10 = np.dot(p9,transitionMatrix)
+p11 = np.dot(p10,transitionMatrix)
+p12 = np.dot(p11,transitionMatrix)
+p13 = np.dot(p12,transitionMatrix)
+p14 = np.dot(p13,transitionMatrix)
+p15 = np.dot(p14,transitionMatrix)
+p16 = np.dot(p15,transitionMatrix)
+p17 = np.dot(p16,transitionMatrix)
+p18 = np.dot(p17,transitionMatrix)
+p19 = np.dot(p18,transitionMatrix)
+p20 = np.dot(p19,transitionMatrix)
+p21 = np.dot(p20,transitionMatrix)
+p22 = np.dot(p21,transitionMatrix)
+p23 = np.dot(p22,transitionMatrix)
+# print(p22)
